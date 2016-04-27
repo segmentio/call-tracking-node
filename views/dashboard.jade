@@ -35,7 +35,7 @@ block content
               td #{leadSource.forwardingNumber}
               td
                 a.btn.btn-xs.btn-primary.converted-lead(
-                  href= '#' name = '#{leadSource}') Converted Lead
+                  href= '#' name = '#{leadSource.number}') Converted Lead
               td
                 a.btn.btn-xs.btn-default(
                   href= '/lead-source/' + '#{leadSource._id}' + '/edit') Edit
