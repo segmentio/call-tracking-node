@@ -4,13 +4,13 @@ html(lang='en')
     title= title || 'Call Tracking'
 
     // Twilio shortcut icons
-    link(rel='shortcut icon', 
+    link(rel='shortcut icon',
       href='//twilio.com/bundles/marketing/img/favicons/favicon.ico')
-    link(rel='apple-touch-icon', 
+    link(rel='apple-touch-icon',
       href='//twilio.com/bundles/marketing/img/favicons/favicon_57.png')
-    link(rel='apple-touch-icon', sizes='72x72', 
+    link(rel='apple-touch-icon', sizes='72x72',
       href='/bundles/marketing/img/favicons/favicon_72.png')
-    link(rel='apple-touch-icon' sizes='114x114' 
+    link(rel='apple-touch-icon' sizes='114x114'
       href='//twilio.com/bundles/marketing/img/favicons/favicon_114.png')
 
     // Include Font Awesome Icons
@@ -18,7 +18,7 @@ html(lang='en')
       href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')
 
     // Twitter Bootstrap included for some basic styling
-    link(rel='stylesheet', 
+    link(rel='stylesheet',
       href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
 
     // HTML 5 shims for older IE
@@ -44,12 +44,17 @@ html(lang='en')
       block content
 
     footer.container.
-      Made with <i class="fa fa-heart"></i> by your pals 
+      Made with <i class="fa fa-heart"></i> by your pals
       <a href="http://www.twilio.com">@twilio</a>.
 
-    // Include jQuery and Bootstrap scripts
+    // Include jQuery, Bootstrap, and Segment scripts
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
     script(src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+    script.
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+      analytics.load('#{writeKey}');
+      analytics.page();
+      }}();
 
     //- Include any page-specific scripts
     block scripts

@@ -26,20 +26,9 @@ npm install
 This should install all of our project dependencies from npm into a local 
 `node_modules` folder.
 
-### Create a TwiML App
-
-This project is configured to use a **TwiML App**, which allows us to easily set the voice URLs for all Twilio phone numbers we purchase in this app.
-
-Create a new TwiML app at https://www.twilio.com/user/account/apps/add and use its `Sid` as the `TWIML_APP_SID` environment variable wherever you run this app.
-
-![Creating a TwiML App](http://howtodocs.s3.amazonaws.com/call-tracking-twiml-app.gif)
-
-See the end of the "Exposing Webhooks to Twilio" section for details on the exact URL to use in your TwiML app.
-
 ### Configuration
 
-This application is configured using [dotenv](https://www.npmjs.com/package/dotenv).
-Begin by copying the example .env file to use in this application:
+This application is configured using [dotenv](https://www.npmjs.com/package/dotenv). Begin by copying the example .env file to use in this application:
 
 ```bash
 cp .env.example .env
@@ -71,9 +60,11 @@ You should then be able to run a local server with:
 mongod
 ```
 
-By default, there will be a local database running that's not password protected.
-In your `.env` file, set `MONGO_URL` to `mongodb://127.0.0.1/calltracking`. You
-should now be all set to run the app locally!
+By default, there will be a local database running that's not password protected. In your `.env` file, set `MONGO_URL` to `mongodb://127.0.0.1/calltracking`.
+
+Then, you'll need a `SEGMENT_WRITE_KEY`. This is the key that lets [Segment](https://segment.com/) ([sign up for free](https://segment.com/signup)), a customer data platform, know which project to collect analytics data from. You can find your `SEGMENT_WRITE_KEY` by following [this help article](https://help.segment.com/hc/en-us/articles/208330506-Where-do-I-find-my-writeKey-).
+
+You should now be all set to run the app locally!
 
 ### Running the Project
 

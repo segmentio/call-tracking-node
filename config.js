@@ -37,11 +37,15 @@ twimlApp.getTwimlAppSid('Call tracking app').then(function(appSid) {
 // MONGOLAB_URI is for the MongoLab add-on for Heroku deployment
 cfg.mongoUrl = process.env.MONGOLAB_URI || process.env.MONGO_URL;
 
+// Segment writeKey needs to be set.
+cfg.writeKey = process.env.SEGMENT_WRITE_KEY;
+
 // Ensure all required configuration is set
 var configured = [
-  cfg.accountSid, 
-  cfg.authToken, 
-  cfg.mongoUrl
+  cfg.accountSid,
+  cfg.authToken,
+  cfg.mongoUrl,
+  cfg.writeKey
 ].every(function(configValue) {
   if (configValue) {
     return true;
