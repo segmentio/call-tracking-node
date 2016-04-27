@@ -5,8 +5,8 @@ var dashboard = require('./dashboard');
 
 // Map routes to controller functions
 exports.webRoutes = function(router) {
-  router.get('/', function(req, resp) { 
-    return resp.redirect(302, '/dashboard'); 
+  router.get('/', function(req, resp) {
+    return resp.redirect(302, '/dashboard');
   });
   router.get('/available-numbers', availableNumbers.index);
   router.post('/lead-source', leadSources.create);

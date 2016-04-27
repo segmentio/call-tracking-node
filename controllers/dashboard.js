@@ -5,7 +5,8 @@ exports.show = function(request, response) {
   LeadSource.find().then(function(leadSources) {
     return response.render('dashboard', {
       leadSources: leadSources,
-      appSid: config.appSid
+      appSid: config.appSid,
+      writeKey: config.writeKey
     });
   });
 };
